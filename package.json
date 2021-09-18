@@ -1,12 +1,15 @@
 {
   "name": "github-api",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open=true --watch=true --verbose=false",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "build": "ng build --configuration=development",
+    "build:prod": "ng build --configuration=production",
+    "bundle-report": "ng build --configuration=production --stats-json && webpack-bundle-analyzer dist/stats.json",
+    "bundle-analyze": "webpack-bundle-analyzer .\\dist\\stats.json",
+    "test": "ng test",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -30,12 +33,21 @@
     "@angular/compiler-cli": "~12.2.0",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
+    "@angular-eslint/builder": "12.3.1",
+    "@angular-eslint/eslint-plugin": "12.3.1",
+    "@angular-eslint/eslint-plugin-template": "12.3.1",
+    "@angular-eslint/schematics": "12.3.1",
+    "@angular-eslint/template-parser": "12.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "4.31.1",
+    "eslint": "^7.32.0",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.3.5"
+    "typescript": "~4.3.5",
+    "webpack-bundle-analyzer": "^4.4.2"
   }
 }

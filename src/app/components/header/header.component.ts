@@ -8,12 +8,12 @@ import { Component, Input } from '@angular/core';
 })
 export class HeaderComponent {
 
-  @Input() title: string = '';
-  @Input() icon: boolean = true;
+  @Input() title = '';
+  @Input() icon = true;
 
   constructor(private location: Location) { }
 
-  back() {
+  back(): void {
     this.location.back();
   }
 
