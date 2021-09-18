@@ -1,1 +1,38 @@
-<p>repo works!</p>
+<div class="page-container">
+
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <span (click)="back()">
+        <mat-icon>arrow_back_ios</mat-icon>
+        Repository Details
+      </span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div class="page-content">
+
+    <div>
+      <h2>{{repo}}</h2>
+      <h2>List of contributors</h2>
+    </div>
+
+    <div class="repo-list" *ngIf="$contributors | async as contributors">
+
+      <mat-nav-list>
+
+        <mat-list-item *ngFor="let c of contributors; trackBy: identify">
+          <a matLine routerLink="/user/{{c?.login}}" [title]="c?.login">
+            <img [src]="c?.avatar_url" [title]="c?.login" width="75" height="75" />
+            <span>{{c?.login}}</span>
+            <mat-icon>arrow_forward_ios</mat-icon>
+          </a>
+
+        </mat-list-item>
+
+      </mat-nav-list>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UsersComponent } from './pages/users/users/users.component';
 
 const routes: Routes = [
   {
-    path: 'users',
-    component: UsersComponent
-  }
+    path: '',
+    loadChildren: () => import('./pages/users/users.module').then(m => m.UsersPageModule)
+  },
+  { path: '**', redirectTo: '' }
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

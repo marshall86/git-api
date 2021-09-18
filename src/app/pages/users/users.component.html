@@ -1,0 +1,33 @@
+<div class="page-container">
+
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <span>GitHub users list</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div class="page-content">
+
+    <mat-spinner *ngIf="!showContent" class="custom-spinner"></mat-spinner>
+
+    <mat-nav-list>
+
+      <mat-list-item *ngFor="let user of usersList; trackBy: identify">
+
+        <a matLine routerLink="user/{{user?.login}}" [title]="user?.login">
+          <img [src]="user?.avatar_url" [title]="user?.login" width="75" height="75" />
+          <span>{{user?.login}}</span>
+          <mat-icon>arrow_forward_ios</mat-icon>
+        </a>
+
+      </mat-list-item>
+
+      <mat-paginator [pageIndex]="paginator?.pageIndex" [pageSizeOptions]="[10, 20, 50]"
+        [pageSize]="paginator?.pageSize" (page)="tablePageChange($event)">
+        <a>click</a>
+      </mat-paginator>
+
+    </mat-nav-list>
+  </div>
+
+</div>

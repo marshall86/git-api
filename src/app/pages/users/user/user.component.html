@@ -1,1 +1,44 @@
-<p>user works!</p>
+<div class="page-container">
+
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <span (click)="back()">
+        <mat-icon>arrow_back_ios</mat-icon>
+        User Details
+      </span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div *ngIf="$user | async as u" class="page-content">
+
+    <mat-card>
+
+      <mat-card-header>
+        <mat-card-title>{{u.login}}</mat-card-title>
+        <mat-card-subtitle>Followers: {{u.followers}} | Following: {{u.following}}</mat-card-subtitle>
+      </mat-card-header>
+
+      <img mat-card-image mat-card-lg-image [src]="u.avatar_url" [title]="u.login">
+
+      <mat-card-content>
+
+        <div class="repo-list" *ngIf="$repo | async as rp">
+          <h2>List of repositories</h2>
+
+          <mat-nav-list>
+            <mat-list-item *ngFor="let r of rp; trackBy: identify">
+              <a matLine routerLink="/user/{{r.full_name}}">
+                <span>{{r.name}}}</span>
+                <mat-icon>arrow_forward_ios</mat-icon>
+              </a>
+            </mat-list-item>
+          </mat-nav-list>
+        </div>
+
+      </mat-card-content>
+
+    </mat-card>
+
+  </div>
+
+</div>
