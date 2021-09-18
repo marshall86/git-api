@@ -7,7 +7,7 @@ import { Contributor } from 'src/app/interfaces/generic';
 @Component({
   selector: 'app-repo',
   templateUrl: './repo.component.html',
-  styleUrls: ['./repo.component.scss']
+  styles: [`h2 { margin: 20px 30px 0 30px; }`]
 })
 export class RepoComponent implements OnInit {
 

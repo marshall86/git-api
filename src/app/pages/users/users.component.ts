@@ -7,8 +7,7 @@ import { catchError, takeUntil } from 'rxjs/operators';
 
 @Component({
     selector: 'app-users',
-    templateUrl: './users.component.html',
-    styleUrls: ['./users.component.scss']
+    templateUrl: './users.component.html'
 })
 export class UsersComponent implements OnInit, OnDestroy {
 

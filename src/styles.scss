@@ -13,15 +13,22 @@ body {
 mat-list-item {
   min-height: 48px;
   height: auto !important;
-  border-bottom: 1px solid #ccc;
+  margin: 15px 0 !important;
+
+  img {
+    margin: 0 15px !important;
+  }
 
   a {
-    span {
-      width: 100%;
-    }
+    display: flex !important;
+    align-items: center;
 
-    mat-icon {
-      vertical-align: middle;
+    img {
+      margin: 15px;
     }
   }
+}
+
+.page-container {
+  margin: 20px;
 }

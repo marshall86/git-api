@@ -13,7 +13,7 @@
 
       <img mat-card-image mat-card-lg-image [src]="u.avatar_url" [title]="u.login">
 
-      <mat-card-content>
+      <mat-card-content *ngIf="u.public_repos > 0">
 
         <div class="repo-list" *ngIf="$repo | async as rp">
           <h2>List of repositories</h2>

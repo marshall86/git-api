@@ -1,0 +1,20 @@
+:host ::ng-deep {
+  a {
+    width: 100%;
+    min-height: 48px;
+    display: flex !important;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+
+    span {
+      width: 100%;
+      margin-left: 10px;
+    }
+
+    mat-icon {
+      vertical-align: middle;
+    }
+  }
+
+}

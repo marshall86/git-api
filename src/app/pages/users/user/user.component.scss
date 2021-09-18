@@ -1,11 +1,16 @@
 .page-container {
 
-  margin: 20px;
-
   mat-card {
     img {
       margin-left: 10px;
     }
+
+    .repo-list {
+      h2 {
+        margin: 0 0 0 10px;
+      }
+    }
+
   }
 
 }
