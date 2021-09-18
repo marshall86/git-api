@@ -1,6 +1,13 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { IApi } from 'src/app/interfaces/api';
+import { ApiService } from 'src/app/services/api.service';
 
 import { RepoComponent } from './repo.component';
+
+export const activatedRouteStub = (): unknown => ({ snapshot: { params: {} } });
 
 describe('RepoComponent', () => {
   let component: RepoComponent;
@@ -8,9 +15,15 @@ describe('RepoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RepoComponent ]
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [HttpClientTestingModule],
+      declarations: [RepoComponent],
+      providers: [
+        { provide: ActivatedRoute, useFactory: activatedRouteStub },
+        { provide: IApi, useClass: ApiService }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
