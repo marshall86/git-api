@@ -1,0 +1,22 @@
+<mat-list-item *ngFor="let d of data; trackBy: identify;">
+
+  <ng-container *ngIf="type === 'users'; else elseTemplate">
+
+    <a matLine routerLink="/user/{{d?.login}}" [title]="d?.login">
+      <img [src]="d?.avatar_url" [title]="d?.login" width="75" height="75" />
+      <span>{{d?.login}}</span>
+      <mat-icon>arrow_forward_ios</mat-icon>
+    </a>
+
+  </ng-container>
+
+  <ng-template #elseTemplate>
+
+    <a matLine routerLink="/user/{{d?.full_name}}">
+      <span>{{d?.name}}}</span>
+      <mat-icon>arrow_forward_ios</mat-icon>
+    </a>
+
+  </ng-template>
+
+</mat-list-item>

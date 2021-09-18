@@ -30,10 +30,6 @@ export class UsersComponent implements OnInit, OnDestroy {
         this._destroyed$.unsubscribe();
     }
 
-    identify(_index: number, item: { id: number; }): number {
-        return item.id;
-    }
-
     loadUsers(pageIndex: number): void {
         this.api.getUsersList(pageIndex)
             .pipe(

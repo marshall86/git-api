@@ -25,10 +25,6 @@ export class RepoComponent implements OnInit {
     this.$contributors = this.api.getRepoContributors(this.user, this.repo);
   }
 
-  identify(_index: number, item: { id: number; }): number {
-    return item.id;
-  }
-
   back(): void {
     this.location.back();
   }

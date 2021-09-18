@@ -26,12 +26,7 @@
           <h2>List of repositories</h2>
 
           <mat-nav-list>
-            <mat-list-item *ngFor="let r of rp; trackBy: identify">
-              <a matLine routerLink="/user/{{r.full_name}}">
-                <span>{{r.name}}}</span>
-                <mat-icon>arrow_forward_ios</mat-icon>
-              </a>
-            </mat-list-item>
+            <app-list-item type="repositories" [data]="rp"></app-list-item>
           </mat-nav-list>
         </div>
 

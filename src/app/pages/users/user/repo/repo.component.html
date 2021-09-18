@@ -19,16 +19,7 @@
     <div class="repo-list" *ngIf="$contributors | async as contributors">
 
       <mat-nav-list>
-
-        <mat-list-item *ngFor="let c of contributors; trackBy: identify">
-          <a matLine routerLink="/user/{{c?.login}}" [title]="c?.login">
-            <img [src]="c?.avatar_url" [title]="c?.login" width="75" height="75" />
-            <span>{{c?.login}}</span>
-            <mat-icon>arrow_forward_ios</mat-icon>
-          </a>
-
-        </mat-list-item>
-
+        <app-list-item type="users" [data]="contributors"></app-list-item>
       </mat-nav-list>
 
     </div>

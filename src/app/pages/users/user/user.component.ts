@@ -25,10 +25,6 @@ export class UserComponent implements OnInit {
     this.$repo = this.api.getUserRepos(this.userId);
   }
 
-  identify(_index: number, item: { id: number; }): number {
-    return item.id;
-  }
-
   back(): void {
     this.location.back();
   }

@@ -6,6 +6,7 @@ import { UsersPageRoutingModule } from './users-routing.module';
 import { SharedModule } from 'src/app/modules/shared-modules/shared-modules.module';
 import { UserComponent } from './user/user.component';
 import { RepoComponent } from './user/repo/repo.component';
+import { ListItemComponent } from 'src/app/components/list/list.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { RepoComponent } from './user/repo/repo.component';
   declarations: [
     UsersComponent,
     UserComponent,
-    RepoComponent
+    RepoComponent,
+    ListItemComponent
   ]
 })
 export class UsersPageModule { }
