@@ -5,14 +5,14 @@ import { ApiService } from 'src/app/services/api.service';
 import { SkeletonModule } from '../skeleton-modules/skeleton-modules.module';
 
 @NgModule({
-  imports: [
+    imports: [
         SkeletonModule,
         RouterModule
     ],
     exports: [
         SkeletonModule
     ],
-     declarations: [],
+    declarations: [],
     providers: [
         { provide: IApi, useClass: ApiService },
         // { provide: HTTP_INTERCEPTORS, useClass: ApiAuthInterceptor, multi: true }

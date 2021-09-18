@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { MaterialDesignModule } from '../material-design/material-design.module';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
+import { HeaderComponent } from 'src/app/components/header/header.component';
 
 export const myModules = [
     MaterialDesignModule,
 ];
 
 export const skeletonComponents = [
-    AppComponent
+    AppComponent,
+    HeaderComponent
 ];
 
 @NgModule({

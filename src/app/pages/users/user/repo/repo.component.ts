@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common'
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IApi } from 'src/app/interfaces/api';
@@ -16,17 +15,13 @@ export class RepoComponent implements OnInit {
   repo: string;
   $contributors: Observable<Contributor[]> | undefined;
 
-  constructor(private route: ActivatedRoute, private location: Location, private api: IApi) {
+  constructor(private route: ActivatedRoute, private api: IApi) {
     this.user = this.route.snapshot.params['id'];
     this.repo = this.route.snapshot.params['name'];
   }
 
   ngOnInit(): void {
     this.$contributors = this.api.getRepoContributors(this.user, this.repo);
-  }
-
-  back(): void {
-    this.location.back();
   }
 
 }
